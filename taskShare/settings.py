@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'taskShare.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql', # cambiar la base de datos a postgres
-        'NAME': 'taskshare', # nombre de la base de datos, se creará en el servidor de Postgres a continuación
-        'USER': 'stephaniefrias', # postgres para macOS o 'USER': 'postgres', para Windows
-        'PASSWORD': 'password', # contraseña a la que la cambió al instalar Postgres
-        'HOST': '127.0.0.1', # dirección IP localhost
-        'PORT': '5432', # puerto del servidor postgres predeterminado
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
