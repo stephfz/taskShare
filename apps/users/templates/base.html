@@ -1,0 +1,29 @@
+{% load static %}
+
+<head>
+
+
+</head>
+
+
+<body>
+
+{% if request.session.logged_username %}
+    <div>
+        <h1> Usuario: {{request.session.logged_username}} </h1>
+        <h3> <a href="home">Home</a>  </h2>
+        <h3> <a href="/settings">Settings</a>  </h2>
+    </div>
+{% endif %}
+
+
+ <div>
+
+    {% block content %}
+
+    {% endblock%}
+ </div>
+
+
+</body>
+

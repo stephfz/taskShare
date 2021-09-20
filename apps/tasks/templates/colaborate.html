@@ -1,0 +1,24 @@
+
+
+<h2> Tareas de Otros Usuarios  </h2>
+
+<table>
+
+    <th>Nombre</th>
+    <th>Publicado por</th>
+    <th>Fecha Limite</th>
+    <th>Acciones</th>
+    {% for task in all_tasks %}
+    <tr>
+        <td>{{task.name}}</td>
+        <td>{{task.user.name}}</td>
+        <td>{{task.due_date}}</td>
+        
+            {% if user not in task.helpers.all %}
+            <td> <a href="{% url 'join' task_id=task.id %}"> Colaborar </a></td>
+            {% else %}
+            <td> Colaborando </td>  
+            {%endif%}
+    </tr>    
+    {% endfor %}
+</table>

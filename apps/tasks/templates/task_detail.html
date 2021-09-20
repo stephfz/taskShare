@@ -1,0 +1,8 @@
+
+<form action = '' id = 'taskForm' method="post">
+
+    {% csrf_token %}
+    {{ taskForm.as_p }}
+    <button type ='submit'>Guardar</button>
+    <button type ='submit' value="cancel">Cancelar</button>
+</form>
