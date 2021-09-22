@@ -3,7 +3,6 @@ from .models import User, UserManager
 from django.shortcuts import render, redirect
 from .forms.customForms import LoginForm
 
-
 import bcrypt
 from django.contrib.auth.hashers import make_password
 
@@ -29,7 +28,7 @@ def register(request):
                 print('Nuevo Usuario: ', new_user.name)            
                 request.session['logged_userid'] = new_user.id  
                 request.session['logged_username'] = new_user.name
-            return redirect('/home')                 
+            return redirect('tasks/home')                 
 
 
 def login(request):
@@ -47,11 +46,6 @@ def login(request):
                 request.session["logged_username"] = user.name
                 return redirect('tasks/home')
         return redirect('/login')        
-
-
-
-   
-
 
 def logout(request):
     try: 
